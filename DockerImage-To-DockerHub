@@ -1,0 +1,31 @@
+To push your Docker image to Docker Hub, you'll need to follow these steps:
+
+1. **Login to Docker Hub**: Before you can push images to Docker Hub, you need to log in with your Docker Hub account. Open a terminal and run the following command:
+
+   ```bash
+   docker login
+   ```
+
+   You'll be prompted to enter your Docker Hub username and password. If you have two-factor authentication enabled, follow the prompts to complete the login.
+
+2. **Tag your Docker Image**: Ensure that your Docker image is properly tagged with your Docker Hub username and the desired repository name. You can use the `docker tag` command to do this. Replace `your-username` with your Docker Hub username, and `your-repo-name` with the name of your repository on Docker Hub:
+
+   ```bash
+   docker tag your-image-name:your-tag your-username/your-repo-name:your-tag
+   ```
+
+   Make sure you've previously built your Docker image with the desired name and tag.
+
+3. **Push the Image to Docker Hub**: Once your image is properly tagged, you can push it to Docker Hub using the `docker push` command:
+
+   ```bash
+   docker push your-username/your-repo-name:your-tag
+   ```
+
+   Docker will start uploading your image to Docker Hub. The time it takes depends on the size of your image and your internet connection speed.
+
+4. **Verify the Upload**: After the upload is complete, you can verify that your image is available on Docker Hub by visiting your Docker Hub repository URL in a web browser or by searching for it on the Docker Hub website.
+
+Now, your Docker image is publicly available on Docker Hub for others to use.
+
+Remember to keep your Docker Hub credentials secure and avoid sharing them publicly. Additionally, if you want to share private Docker images, you may need to set up a private repository on Docker Hub or consider using other container registry services that offer more control over access and permissions.
