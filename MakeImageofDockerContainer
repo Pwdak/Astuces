@@ -1,0 +1,41 @@
+Pour créer une nouvelle image Docker (version 2) à partir des modifications apportées à votre conteneur (version 1), vous pouvez suivre ces étapes :
+
+1. **Arrêtez le conteneur en cours d'exécution** : Si votre conteneur de la version 1 est toujours en cours d'exécution, arrêtez-le en utilisant la commande `docker stop` en spécifiant le nom ou l'ID du conteneur :
+
+   ```bash
+   docker stop nom-du-conteneur
+   ```
+
+2. **Créez une nouvelle image à partir du conteneur modifié** : Vous pouvez créer une nouvelle image à partir de votre conteneur en utilisant la commande `docker commit`. Par exemple :
+
+   ```bash
+   docker commit nom-du-conteneur nom-de-l-image:v2
+   ```
+
+   Cela crée une nouvelle image avec le nom spécifié (dans cet exemple, "nom-de-l-image") et le tag "v2". Assurez-vous de remplacer "nom-du-conteneur" par le nom ou l'ID de votre conteneur.
+
+3. **Vérifiez la création de la nouvelle image** : Vous pouvez vérifier que la nouvelle image a été créée en utilisant la commande `docker images` :
+
+   ```bash
+   docker images
+   ```
+
+   Assurez-vous que l'image avec le nom et le tag que vous avez spécifiés apparaît dans la liste.
+
+4. **Facultatif : Supprimez le conteneur de la version 1** : Si vous n'avez plus besoin du conteneur de la version 1, vous pouvez le supprimer en utilisant la commande `docker rm` :
+
+   ```bash
+   docker rm nom-du-conteneur
+   ```
+
+   Cela supprime le conteneur, mais garde l'image v1 intacte.
+
+5. **Facultatif : Supprimez l'image v1 (si nécessaire)** : Si vous ne souhaitez plus conserver l'image v1, vous pouvez la supprimer en utilisant la commande `docker rmi` :
+
+   ```bash
+   docker rmi nom-de-l-image:v1
+   ```
+
+   Assurez-vous que vous n'avez plus besoin de cette image avant de la supprimer.
+
+Vous avez maintenant une nouvelle image Docker (version 2) basée sur les modifications apportées à votre conteneur de la version 1. Vous pouvez utiliser cette nouvelle image pour créer et exécuter de nouveaux conteneurs avec les dernières modifications.
