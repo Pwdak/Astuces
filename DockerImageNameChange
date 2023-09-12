@@ -1,0 +1,27 @@
+Oui, il est tout à fait possible de changer le nom d'une image Docker. Vous pouvez le faire en suivant ces étapes :
+
+1. **Renommer l'image locale** : Vous pouvez renommer une image Docker localement en utilisant la commande `docker tag`. Par exemple, pour renommer une image nommée "ancien-nom" en "nouveau-nom", vous pouvez exécuter la commande suivante :
+
+   ```bash
+   docker tag ancien-nom:tag nouveau-nom:tag
+   ```
+
+   Assurez-vous de remplacer "ancien-nom" par le nom actuel de votre image, "tag" par le tag (version) de l'image si nécessaire, et "nouveau-nom" par le nouveau nom que vous souhaitez donner à l'image.
+
+2. **Supprimer l'ancienne image (facultatif)** : Si vous souhaitez supprimer l'ancienne image avec l'ancien nom, vous pouvez utiliser la commande `docker rmi` :
+
+   ```bash
+   docker rmi ancien-nom:tag
+   ```
+
+   N'oubliez pas de remplacer "ancien-nom" et "tag" par les valeurs appropriées.
+
+3. **Vérifier le renommage** : Vous pouvez utiliser la commande `docker images` pour vérifier que l'image a été renommée avec succès.
+
+   ```bash
+   docker images
+   ```
+
+   Assurez-vous que l'image portant le nouveau nom apparaît dans la liste.
+
+Gardez à l'esprit que renommer une image ne modifie pas le contenu de l'image elle-même, mais seulement son nom et son tag. Cela peut être utile pour mieux organiser vos images Docker ou pour les partager sous un nom plus significatif.
