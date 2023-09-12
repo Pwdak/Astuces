@@ -1,4 +1,4 @@
-####################################################### PUSH DOCKER IMAGES TO A DOCKERHUB ~###################################################
+############# PUSH DOCKER IMAGES TO A DOCKERHUB ~##############################
 1. **Login to Docker Hub**: 
    docker login
    
@@ -11,7 +11,7 @@
 7. **Verify the Upload**: After the upload is complete, you can verify that your image is available on Docker Hub by visiting 
 your Docker Hub repository URL in a web browser or by searching for it on the Docker Hub website.
 
-#################################################### CHANGE THE NAME OF MY DOCKER IMAGE #################################################
+############## CHANGE THE NAME OF MY DOCKER IMAGE ############################
 1. **Renommer l'image locale** :
    docker tag ancien-nom:tag nouveau-nom:tag
 
@@ -21,7 +21,7 @@ your Docker Hub repository URL in a web browser or by searching for it on the Do
 3. **Vérifier le renommage** : 
    docker images
 
-#################################################### CREATE A IMAGE FROM A CONTAINER DOCKER #################################################33
+############## CREATE A IMAGE FROM A CONTAINER DOCKER #######################
 1. **Arrêtez le conteneur en cours d'exécution** : 
    docker stop nom-du-conteneur
    
