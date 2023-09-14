@@ -1,0 +1,41 @@
+Podman est une alternative à Docker pour la gestion de conteneurs sous Linux. Voici une liste de certaines des commandes Podman les plus couramment utilisées, ainsi que leurs rôles :
+
+1. **podman run** : Cette commande permet de lancer un conteneur à partir d'une image spécifiée. Vous pouvez définir diverses options pour configurer le comportement du conteneur, telles que les ports, les volumes, les variables d'environnement, etc.
+
+2. **podman ps** : Elle affiche la liste des conteneurs en cours d'exécution sur votre système. Vous pouvez voir des informations telles que les identifiants de conteneur, les noms, les ports exposés, etc.
+
+3. **podman images** : Cette commande liste les images de conteneurs disponibles localement sur votre système.
+
+4. **podman pull** : Elle permet de télécharger une image de conteneur depuis un registre, comme Docker Hub, et de la stocker localement sur votre système.
+
+5. **podman build** : Elle permet de construire une nouvelle image de conteneur à partir d'un Dockerfile ou d'un contexte de construction.
+
+6. **podman rm** : Vous pouvez utiliser cette commande pour supprimer un ou plusieurs conteneurs existants.
+
+7. **podman rmi** : Cette commande supprime une image de conteneur locale.
+
+8. **podman exec** : Elle permet d'exécuter une commande à l'intérieur d'un conteneur en cours d'exécution.
+
+9. **podman inspect** : Elle affiche des informations détaillées sur un conteneur, une image ou un pod.
+
+10. **podman volume** : Cette commande gère les volumes de données, qui peuvent être montés dans les conteneurs pour stocker des données persistantes.
+
+11. **podman network** : Elle permet de gérer les réseaux Podman, notamment la création et la configuration de réseaux personnalisés.
+
+12. **podman pod** : Cette commande permet de gérer les pods, qui sont des groupes de conteneurs qui partagent un espace de réseau et de stockage.
+
+13. **podman logs** : Vous pouvez utiliser cette commande pour consulter les journaux de sortie d'un conteneur en cours d'exécution.
+
+14. **podman top** : Elle affiche les processus en cours d'exécution à l'intérieur d'un conteneur.
+
+15. **podman commit** : Cette commande crée une nouvelle image de conteneur à partir d'un conteneur en cours d'exécution.
+
+16. **podman export** et **podman import** : Elles permettent d'exporter et d'importer des systèmes de fichiers de conteneurs.
+
+17. **podman pause** et **podman unpause** : Elles permettent de mettre en pause et de reprendre l'exécution d'un conteneur.
+
+18. **podman system prune** : Cette commande permet de supprimer les conteneurs, images et autres ressources inutilisées pour libérer de l'espace disque.
+
+19. **podman info** : Elle affiche des informations sur le système Podman, telles que la version, les emplacements des fichiers de configuration, etc.
+
+20. **podman help** : Vous pouvez utiliser cette commande pour obtenir de l'aide sur l'utilisation de Podman et ses sous-commandes.
