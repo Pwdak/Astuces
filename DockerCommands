@@ -1,0 +1,39 @@
+Lorsque vous utilisez la commande `docker run`, vous pouvez spécifier différentes options pour personnaliser le comportement de votre conteneur. Voici quelques options couramment utilisées que vous pouvez ajouter à votre commande :
+
+1. **-d, --detach** : Cette option permet de détacher le conteneur en arrière-plan. Le conteneur s'exécute en arrière-plan et libère le terminal actuel.
+
+   Exemple : `docker run -d nom_de_l_image`
+
+2. **-p, --publish** : Utilisé pour mapper des ports du conteneur aux ports de l'hôte. Par exemple, pour exposer le port 8080 du conteneur sur le port 80 de l'hôte, vous pouvez utiliser `-p 80:8080`.
+
+   Exemple : `docker run -p 80:8080 nom_de_l_image`
+
+3. **-v, --volume** : Utilisé pour monter des volumes dans le conteneur, permettant ainsi de stocker des données persistantes. Par exemple, `-v /chemin/vers/mon-dossier:/chemin/dans/le/conteneur`.
+
+   Exemple : `docker run -v /chemin/vers/mon-dossier:/app/data nom_de_l_image`
+
+4. **--name** : Permet de spécifier un nom personnalisé pour le conteneur au lieu d'utiliser un nom généré automatiquement.
+
+   Exemple : `docker run --name mon_conteneur nom_de_l_image`
+
+5. **-e, --env** : Utilisé pour définir des variables d'environnement dans le conteneur. Par exemple, `-e VARIABLE=valeur`.
+
+   Exemple : `docker run -e MYSQL_ROOT_PASSWORD=secret mysql`
+
+6. **--rm** : Cette option supprimera automatiquement le conteneur après qu'il ait été arrêté.
+
+   Exemple : `docker run --rm nom_de_l_image`
+
+7. **--network** : Permet de spécifier le réseau auquel le conteneur doit être connecté.
+
+   Exemple : `docker run --network=mon_reseau nom_de_l_image`
+
+8. **--restart** : Vous pouvez définir la politique de redémarrage du conteneur en utilisant cette option. Par exemple, `--restart=always` pour que le conteneur redémarre toujours en cas d'arrêt.
+
+   Exemple : `docker run --restart=always nom_de_l_image`
+
+9. **-it** : Cette combinaison d'options permet d'ouvrir une session interactive avec le conteneur, généralement utilisée pour les conteneurs en mode console.
+
+   Exemple : `docker run -it ubuntu`
+
+N'oubliez pas d'adapter ces options en fonction de vos besoins spécifiques et du conteneur que vous utilisez. Pour obtenir une liste complète des options de la commande `docker run`, vous pouvez consulter la documentation Docker ou utiliser la commande `docker run --help`.
