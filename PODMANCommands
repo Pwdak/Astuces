@@ -39,3 +39,10 @@ Podman est une alternative à Docker pour la gestion de conteneurs sous Linux. V
 19. **podman info** : Elle affiche des informations sur le système Podman, telles que la version, les emplacements des fichiers de configuration, etc.
 
 20. **podman help** : Vous pouvez utiliser cette commande pour obtenir de l'aide sur l'utilisation de Podman et ses sous-commandes.
+
+21. **podman tag mon_image:tag mon_nom_d_utilisateur/mon_image:tag** : étiquette l'image `mon_image:tag` avec un nouveau nom et une nouvelle balise, prête à être poussée vers un registre Docker Hub ou un autre registre.
+
+22. **podman push mon_nom_d_utilisateur/mon_image:tag** : Pousser une image vers un registre. 
+Assurez-vous d'être connecté au registre (par exemple, en utilisant `podman login`) si nécessaire avant de pousser l'image
+
+N'oubliez pas de remplacer `mon_image:tag` par le nom et la balise de l'image que vous souhaitez étiqueter et pousser, ainsi que `mon_nom_d_utilisateur` par votre nom d'utilisateur sur le registre.
