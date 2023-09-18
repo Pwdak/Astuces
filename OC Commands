@@ -1,0 +1,53 @@
+La commande `oc` est souvent utilisée pour gérer les ressources et les applications sur des clusters Kubernetes avec OpenShift. Pour l'authentification avec `oc`, vous avez généralement besoin d'accéder à un cluster OpenShift et de vous authentifier en tant qu'utilisateur autorisé. Voici quelques commandes `oc` couramment utilisées pour gérer l'authentification :
+
+1. **Connexion à un cluster OpenShift :**
+   Pour vous connecter à un cluster OpenShift, vous pouvez utiliser la commande suivante. Vous devrez fournir les informations de connexion appropriées, telles que l'URL du cluster et vos informations d'identification.
+
+   oc login <URL_DU_CLUSTER>
+
+2. **Connexion avec un nom d'utilisateur et un mot de passe :**
+   Si vous souhaitez vous connecter avec un nom d'utilisateur et un mot de passe, vous pouvez utiliser la commande suivante :
+
+oc login <URL_DU_CLUSTER> -u <NOM_UTILISATEUR> -p <MOT_DE_PASSE>
+
+3. **Connexion avec un jeton d'authentification :**
+   Vous pouvez également vous connecter en utilisant un jeton d'authentification. Pour ce faire, utilisez la commande suivante en remplaçant `<TOKEN>` par votre jeton :
+   oc login <URL_DU_CLUSTER> --token=<TOKEN>
+
+4. **Changement de contexte :**
+   Si vous travaillez avec plusieurs clusters OpenShift, vous pouvez utiliser la commande `oc config use-context` pour changer de contexte (c'est-à-dire passer d'un cluster à un autre). Le contexte détermine quel cluster et quel utilisateur sont actuellement actifs.
+
+oc config use-context <NOM_DU_CONTEXTE>
+
+5. **Liste des utilisateurs actifs :**
+   Pour voir les utilisateurs actuellement authentifiés, vous pouvez utiliser la commande suivante :
+
+   oc whoami
+
+6. **Déconnexion :**
+   Pour vous déconnecter du cluster, utilisez simplement la commande `oc logout` :
+
+   oc logout
+
+7. **Affichage de la configuration d'authentification :**
+   Vous pouvez afficher la configuration d'authentification actuelle avec la commande suivante :
+
+   oc config view
+
+8. This command will list all the secrets in the current project/namespace.
+
+  oc get secret
+
+9. This command will list all the ServiceAccounts in the current project/namespace, which are often used for authentication and authorization purpose
+
+  oc get serviceaccount
+
+10. This command will show the details of the specified secret in YAML format.
+
+  oc get secret <SECRET_NAME> -o yaml
+
+11. This command will display the details of the specified ServiceAccount in YAML format.
+
+  oc get serviceaccount <SERVICE_ACCOUNT_NAME> -o yaml
+
+Make sure you are in the correct project/namespace context when using these commands. You can switch to the desired project/namespace using `oc project <NAMESPACE_NAME>` before running these commands.
