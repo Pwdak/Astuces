@@ -1,0 +1,25 @@
+Yarn est un gestionnaire de paquets pour les projets JavaScript. Il est utilisé pour la gestion des dépendances et permet de garantir que tous les membres d'une équipe de développement travaillent avec les mêmes versions des bibliothèques et des packages.
+
+Pour installer Yarn sur CentOS, vous pouvez suivre ces étapes :
+
+1. **Ajouter le référentiel Yarn :**
+   
+   vi/etc/yum.repos.d/yarn.repo
+   [yarn]
+   name=Yarn Repository
+   baseurl=https://dl.yarnpkg.com/rpm/
+   gpgcheck=1
+   gpgkey=https://dl.yarnpkg.com/rpm/pubkey.gpg
+   enabled=1
+
+2. **Installer Yarn :**
+   Après avoir ajouté le référentiel, vous pouvez installer Yarn en utilisant le gestionnaire de paquets `yum`. Exécutez les commandes suivantes en tant qu'administrateur :
+   sudo yum install yarn
+
+   Cette commande installera Yarn ainsi que ses dépendances.
+
+3. **Vérifier l'installation :**
+   Après l'installation, vous pouvez vérifier si Yarn a été installé correctement en exécutant la commande suivante :
+   yarn --version
+
+   Cela devrait afficher la version de Yarn installée sur votre système.
