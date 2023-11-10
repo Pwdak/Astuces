@@ -37,3 +37,28 @@ your Docker Hub repository URL in a web browser or by searching for it on the Do
 5. **Facultatif : Supprimez l'image v1 (si nécessaire)** : 
    docker rmi nom-de-l-image:v1
 # Astuces
+############ INSTALL YARN ON CENTOS ##########################################
+Pour installer Yarn sur CentOS, vous pouvez suivre ces étapes :
+
+1. **Ajouter le référentiel Yarn :**
+   Ajoutez le référentiel Yarn à votre liste de sources de packages.
+
+   vi /etc/yum.repos.d/yarn.repo
+   [yarn]
+   name=Yarn Repository
+   baseurl=https://dl.yarnpkg.com/rpm/
+   gpgcheck=1
+   gpgkey=https://dl.yarnpkg.com/rpm/pubkey.gpg
+   enabled=1
+
+3. **Installer Yarn :**
+   Après avoir ajouté le référentiel, vous pouvez installer Yarn en utilisant le gestionnaire de paquets `yum`. Exécutez les commandes suivantes en tant qu'administrateur :
+   sudo yum install yarn
+
+   Cette commande installera Yarn ainsi que ses dépendances.
+
+4. **Vérifier l'installation :**
+   Après l'installation, vous pouvez vérifier si Yarn a été installé correctement en exécutant la commande suivante :
+   yarn --version
+   
+   Cela devrait afficher la version de Yarn installée sur votre système.
