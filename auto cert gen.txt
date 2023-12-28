@@ -1,0 +1,41 @@
+GENERATE CERTIFICATE FILES 
+To generate new TLS certificate files (cert.pem and key.pem) for Rancher, you'll typically need to use a tool like OpenSSL or obtain certificates from a Certificate Authority (CA). Below are steps to generate self-signed certificates using OpenSSL, assuming you have OpenSSL installed on your machine:
+
+1. **Generate a Private Key:**
+   ```bash
+   openssl genpkey -algorithm RSA -out key.pem
+   ```
+
+2. **Generate a Certificate Signing Request (CSR):**
+   ```bash
+   openssl req -new -key key.pem -out csr.pem
+   ```
+
+   During the process, you'll be prompted to enter information about your organization. For the "Common Name (CN)" field, enter the IP address (172.16.0.103) or the hostname that you'll use to access Rancher.
+
+3. **Generate a Self-Signed Certificate:**
+   ```bash
+   openssl x509 -req -in csr.pem -signkey key.pem -out cert.pem
+   ```
+
+   This step signs the CSR with the private key, creating a self-signed certificate.
+
+4. **Copy the Generated Files to the Correct Location:**
+   Copy the generated cert.pem and key.pem files to the location specified by your Rancher Docker container. For example:
+   ```bash
+   cp cert.pem /path/to/rancher-container/ssl/cert.pem
+   cp key.pem /path/to/rancher-container/ssl/key.pem
+   ```
+
+   Replace `/path/to/rancher-container` with the actual path to the Rancher container.
+
+5. **Restart the Rancher Container:**
+   After copying the files, restart the Rancher container to apply the changes:
+   ```bash
+   docker restart <container_id>
+   ```
+   Replace `<container_id>` with the actual ID or name of your Rancher server container.
+
+Now, you should have new TLS certificate files with the correct IP address. It's important to note that self-signed certificates are suitable for testing and development environments but are not recommended for production. In a production environment, you would typically obtain certificates from a trusted Certificate Authority.
+
+If you prefer to use certificates from a CA, you can follow a similar process but obtain the certificates from your CA's web interface or follow their specific instructions for certificate generation.
