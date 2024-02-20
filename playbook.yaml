@@ -1,0 +1,11 @@
+---
+- name: A test playbook
+  hosts: all
+  become: true 
+  tasks:
+  - name: ping 
+    ping:
+
+  - name: "Hello world !!"
+    debug:
+      msg: "Hello Pwdak !!!"
