@@ -1,0 +1,27 @@
+create directory 
+mkdir test 
+
+move to directory 
+cd test 
+
+Initialize git on  it 
+git init 
+
+Create a file in it 
+touch toto.txt 
+
+Generate ssh key and share in the remote git repo 
+cat ~/.ssh/id_rsa.pub | pbcopy 
+--> go to the remote git repo, select "settings-->Deploy keys-->Paste your ssh public key"
+
+Push the file to the remote repo 
+git add toto.txt 
+git commit -m "test"
+git remote add origin git@github.com:sammy/my-new-project.git
+git push -u -f origin main
+
+Other push 
+After this first push in the directory, you just have to do this for the following push 
+git add -A
+git commit -m 'Added my project'
+git push 
