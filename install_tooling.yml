@@ -1,0 +1,8 @@
+-name: install tooling
+ hosts: all
+ become: yes
+ tasks:
+ - name: install tooling
+   apt:
+     name: vim, git, net-tools
+     state: present
