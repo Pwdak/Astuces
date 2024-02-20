@@ -25,3 +25,5 @@ After this first push in the directory, you just have to do this for the followi
 git add -A
 git commit -m 'Added my project'
 git push 
+
+https://www.digitalocean.com/community/tutorials/how-to-push-an-existing-project-to-github
