@@ -1,0 +1,11 @@
+- name: install_users 
+  hosts: all
+  become: yes 
+  tasks: 
+  - name: install users 
+    user: 
+      name: devops
+      shell: /bin/bash
+      groups: sudo 
+      append: yes 
+      password: "{{ 'password' |  password_hash('sha512') }}"
