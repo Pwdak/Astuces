@@ -1,4 +1,4 @@
 #!/bin/bash
 
 # Create a folder named "BEST"
-mkdir BEST
+mkdir /home/devops/BEST
