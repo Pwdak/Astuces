@@ -1,0 +1,9 @@
+---
+- name: Créer un répertoire SUCCESS
+  hosts: all
+  become: true
+  tasks:
+    - name: Create directory
+      file:
+        path: /home/devops/SUCCESS
+        state: directory
