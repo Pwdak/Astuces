@@ -1,25 +1,13 @@
 ---
-- name: Désinstaller Nginx
+- name: Exécuter le script uninstall_nginx.sh sur la machine cible
   hosts: all
   become: yes
   tasks:
-    - name: Arrêter le service Nginx
-      service:
-        name: nginx
-        state: stopped
-      ignore_errors: yes  # Ignorer les erreurs si le service n'est pas déjà en cours d'exécution
+    - name: Copier le script uninstall_nginx.sh sur la machine cible
+      copy:
+        src: /home/devops/ansible-git-repo/uninstall_nginx.sh  # Remplacez par le chemin local du script
+        dest: /tmp/uninstall_nginx.sh
+        mode: '0755'  # Définir les permissions d'exécution sur le script
 
-    - name: Désactiver le service Nginx
-      service:
-        name: nginx
-        enabled: no
-
-    - name: Supprimer les fichiers de configuration de Nginx
-      file:
-        path: /etc/nginx
-        state: absent
-        recurse: yes
-        force: yes
-
-    - name: Supprimer les fichiers binaires de Nginx
-      command: "apt-get remove --purge -y nginx"
+    - name: Exécuter le script uninstall_nginx.sh
+      script: /tmp/uninstall_nginx.sh
