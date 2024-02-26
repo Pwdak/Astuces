@@ -19,6 +19,7 @@
         path: /etc/nginx
         state: absent
         recurse: yes
+        force: yes
 
     - name: Supprimer les fichiers binaires de Nginx
       command: "apt-get remove --purge -y nginx"
