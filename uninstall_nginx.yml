@@ -5,7 +5,7 @@
   tasks:
     - name: Copier le script uninstall_nginx.sh sur la machine cible
       copy:
-        src: /home/devops/ansible-git-repo/uninstall_nginx.sh  # Remplacez par le chemin local du script
+        remote_src: /home/devops/ansible-git-repo/uninstall_nginx.sh  # Remplacez par le chemin local du script
         dest: /tmp/uninstall_nginx.sh
         mode: '0755'  # Définir les permissions d'exécution sur le script
       delegate_to: localhost 
