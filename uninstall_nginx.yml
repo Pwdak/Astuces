@@ -4,7 +4,7 @@
   become: yes
   tasks:
     - name: Copier le fichier depuis la machine localhost vers la machine node1 
-      copy:
+      ansible.builtin.copy:
         src: /home/devops/ansible-git-repo/uninstall_nginx.sh  # Remplacez par le chemin local du script
         dest: /tmp/uninstall_nginx.sh
         mode: '0755'  # Définir les permissions d'exécution sur le script
