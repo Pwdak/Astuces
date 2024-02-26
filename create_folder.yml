@@ -5,5 +5,5 @@
   tasks:
     - name: Create directory
       file:
-        path: /home/devops/SUCCESS
+        path: /home/devops/ansible-git-repo/SUCCESS
         state: directory
