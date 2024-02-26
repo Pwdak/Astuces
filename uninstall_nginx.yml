@@ -1,0 +1,24 @@
+---
+- name: Désinstaller Nginx
+  hosts: all
+  become: yes
+  tasks:
+    - name: Arrêter le service Nginx
+      service:
+        name: nginx
+        state: stopped
+      ignore_errors: yes  # Ignorer les erreurs si le service n'est pas déjà en cours d'exécution
+
+    - name: Désactiver le service Nginx
+      service:
+        name: nginx
+        enabled: no
+
+    - name: Supprimer les fichiers de configuration de Nginx
+      file:
+        path: /etc/nginx
+        state: absent
+        recurse: yes
+
+    - name: Supprimer les fichiers binaires de Nginx
+      command: "apt-get remove --purge -y nginx"
