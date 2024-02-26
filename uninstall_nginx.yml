@@ -1,6 +1,6 @@
 ---
 - name: Exécuter le script uninstall_nginx.sh sur la machine cible
-  hosts: all
+  hosts: node1
   become: yes
   tasks:
     - name: Copier le script uninstall_nginx.sh sur la machine cible
